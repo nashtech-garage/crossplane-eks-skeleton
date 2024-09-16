@@ -6,3 +6,4 @@ resources:
   - provider-aws-ec2.yaml
   - provider-aws-iam.yaml
   - provider-aws-eks.yaml
+  - eks-cluster-app.yaml
