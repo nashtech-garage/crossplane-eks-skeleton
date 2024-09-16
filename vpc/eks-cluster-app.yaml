@@ -1,9 +1,9 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ${{ values.clusterName }}-app
+  name: eks-${{ values.clusterName }}-app
   annotations:
-    argocd.argoproj.io/sync-wave: "5"
+    argocd.argoproj.io/sync-wave: "6"
   # You'll usually want to add your resources to the argocd namespace.
   namespace: argocd
   # Add a this finalizer ONLY if you want these to cascade delete.
