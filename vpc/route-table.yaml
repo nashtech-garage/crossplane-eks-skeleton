@@ -1,9 +1,10 @@
+---
 apiVersion: ec2.aws.upbound.io/v1beta1
-kind: InternetGateway
+kind: RouteTable
 metadata:
-  name: dev-igw
+  name: rt-${{ values.clusterName }}
   annotations:
-    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/sync-wave: "4"
     argocd.argoproj.io/sync-options: "SkipDryRunOnMissingResource=true"
 spec:
   providerConfigRef:
@@ -11,4 +12,4 @@ spec:
   forProvider:
     region: ${{ values.region }}
     vpcIdRef:
-      name: vpc-dev
+      name: vpc-${{ values.clusterName }}

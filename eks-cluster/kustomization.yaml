@@ -1,16 +1,5 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - vpc.yaml
-  - igw.yaml
-  - subnet.yaml
-  - EIP.yaml
-  - nat.yaml
-  - route-table.yaml
-  - route.yaml
-  - eks-iam-role.yaml
-  - eks-iam-role-attachment.yaml
   - eks-cluster.yaml
-  - nodes-iam-role.yaml
-  - nodes-iam-role-attachment.yaml
   - nodes.yaml

@@ -1,0 +1,28 @@
+---
+apiVersion: eks.aws.upbound.io/v1beta1
+kind: NodeGroup
+metadata:
+  name: nodegroup-${{ values.clusterName }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/sync-options: "SkipDryRunOnMissingResource=true"
+spec:
+  providerConfigRef:
+    name: aws-provider-config 
+  forProvider:
+    clusterNameRef:
+      name: ${{ values.clusterName }}
+    nodeRoleArnRef:
+      name: ex-eks-nodes-role
+    region: ${{ values.region }}
+    capacityType: ON_DEMAND
+    instanceTypes: ["t3.small"]
+    labels:
+      role: nodegroup-${{ values.clusterName }}
+    scalingConfig:
+      - desiredSize: 1
+        minSize: 1
+        maxSize: 2
+    subnetIdRefs:
+      - name: subnet-${{ values.clusterName }}
+---
