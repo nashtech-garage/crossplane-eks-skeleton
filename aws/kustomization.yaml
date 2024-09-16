@@ -3,7 +3,4 @@ kind: Kustomization
 resources:
   - aws-provider.yaml
   - aws-provider-config.yaml
-  - provider-aws-ec2.yaml
-  - provider-aws-iam.yaml
-  - provider-aws-eks.yaml
   - eks-cluster-app.yaml
