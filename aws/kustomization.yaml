@@ -10,6 +10,5 @@ resources:
   - eks-iam-role-attachment.yaml
   - nodes-iam-role.yaml
   - nodes-iam-role-attachment.yaml
-  - vpc-app.yaml
 
   
