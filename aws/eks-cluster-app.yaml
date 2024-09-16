@@ -15,7 +15,7 @@ spec:
   source:
     repoURL: https://github.com/${{ values.owner }}/${{ values.repo }}
     targetRevision: HEAD
-    path: ../eks-cluster
+    path: ./eks-cluster
    
   # Destination cluster and namespace to deploy the application
   destination:
