@@ -4,6 +4,7 @@ resources:
   - vpc.yaml
   - igw.yaml
   - subnet.yaml
+  - EIP.yaml
   - nat.yaml
   - route-table.yaml
   - route.yaml
