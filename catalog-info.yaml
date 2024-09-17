@@ -11,5 +11,5 @@ spec:
   system: back-stack
   owner: user:le.caothihoang
   links:
-    - url: https://console.cloud.google.com/kubernetes/clusters/details/${{ values.region }}/${{ values.clusterName }}
+    - url: https://${{ values.region }}.console.aws.amazon.com/eks/home?region=${{ values.region }}#/clusters/${{ values.clusterName }}
       title: EKS Console

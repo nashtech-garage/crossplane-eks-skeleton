@@ -2,7 +2,7 @@
 apiVersion: ec2.aws.upbound.io/v1beta1
 kind: Subnet
 metadata:
-  name: subnet-us-east-1a-${{ values.clusterName }}
+  name: subnet-${{ values.region }}.a
   annotations:
     argocd.argoproj.io/sync-wave: "2"
     argocd.argoproj.io/sync-options: "SkipDryRunOnMissingResource=true"
@@ -12,7 +12,7 @@ spec:
   providerConfigRef:
     name: aws-provider-config  # This line points to your specific ProviderConfig
   forProvider:
-    availabilityZone: us-east-1a
+    availabilityZone: ${{ values.region }}.a
     cidrBlock: 10.0.0.0/19
     region: ${{ values.region }}
     vpcIdRef:
@@ -22,7 +22,7 @@ spec:
 apiVersion: ec2.aws.upbound.io/v1beta1
 kind: Subnet
 metadata:
-  name: subnet-us-east-1b-${{ values.clusterName }}
+  name: ${{ values.region }}.b
   annotations:
     argocd.argoproj.io/sync-wave: "2"
     argocd.argoproj.io/sync-options: "SkipDryRunOnMissingResource=true"
@@ -32,7 +32,7 @@ spec:
   providerConfigRef:
     name: aws-provider-config  # This line points to your specific ProviderConfig
   forProvider:
-    availabilityZone: us-east-1b
+    availabilityZone: ${{ values.region }}.b
     cidrBlock: 10.0.32.0/19
     region: ${{ values.region }}
     vpcIdRef:
