@@ -1,8 +1,7 @@
----
 apiVersion: eks.aws.upbound.io/v1beta1
 kind: Cluster
 metadata:
-  name: ${{ values.clusterName }}
+  name: my-eks-2
   annotations:
     argocd.argoproj.io/sync-wave: "0"
     argocd.argoproj.io/sync-options: "SkipDryRunOnMissingResource=true"
@@ -10,15 +9,14 @@ spec:
   providerConfigRef:
     name: aws-provider-config 
   forProvider:
-    region: ${{ values.region }}
+    region: us-east-1
     roleArnRef:
       name: eks-ex-cluster-role
     vpcConfig:
       - endpointPrivateAccess: false
         endpointPublicAccess: true
         subnetIdRefs:
-          - name: subnet-us-east-1a-${{ values.clusterName }}
-          - name: subnet-us-east-1b-${{ values.clusterName }}
+          - name: subnet-my-eks-1
   writeConnectionSecretToRef:
-    name: ${{ values.clusterName }}-aws-connection-secret
+    name: my-eks-2-aws-connection-secret
     namespace: upbound-system

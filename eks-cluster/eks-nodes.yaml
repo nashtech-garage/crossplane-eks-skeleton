@@ -24,5 +24,6 @@ spec:
         minSize: 1
         maxSize: 2
     subnetIdRefs:
-      - name: subnet-${{ values.clusterName }}
+      - name: subnet-us-east-1a-${{ values.clusterName }}
+      - name: subnet-us-east-1b-${{ values.clusterName }}
 ---
