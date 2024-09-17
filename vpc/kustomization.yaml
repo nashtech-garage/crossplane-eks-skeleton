@@ -8,4 +8,3 @@ resources:
   - nat.yaml
   - route-table.yaml
   - route.yaml
-  - eks-cluster-app.yaml
