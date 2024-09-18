@@ -16,4 +16,4 @@ spec:
       name: eip-${{ values.clusterName }}
     subnetIdSelector:
       matchLabels:
-        name: ${{ values.region }}.a
+        name: subnet-${{ values.region }}a

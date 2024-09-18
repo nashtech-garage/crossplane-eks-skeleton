@@ -24,6 +24,6 @@ spec:
         minSize: 1
         maxSize: 2
     subnetIdRefs:
-      - name: ${{ values.region }}.a
-      - name: ${{ values.region }}.b
+      - name: subnet-${{ values.region }}a
+      - name: subnet-${{ values.region }}b
 ---

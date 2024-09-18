@@ -17,8 +17,8 @@ spec:
       - endpointPrivateAccess: false
         endpointPublicAccess: true
         subnetIdRefs:
-          - name: ${{ values.region }}.a
-          - name: ${{ values.region }}.b
+          - name: subnet-${{ values.region }}a
+          - name: subnet-${{ values.region }}b
   writeConnectionSecretToRef:
     name: ${{ values.clusterName }}-aws-connection-secret
     namespace: upbound-system
