@@ -31,4 +31,5 @@ spec:
     region: ${{ values.region }}
     vpcIdRef:
       name: vpc-${{ values.clusterName }}
+    mapPublicIpOnLaunch: true
 ---
