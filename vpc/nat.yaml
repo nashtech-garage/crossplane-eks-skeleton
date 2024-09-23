@@ -13,6 +13,5 @@ spec:
     connectivityType: public
     allocationIdRef:
       name: eip-${{ values.clusterName }}
-    subnetIdSelector:
-      matchLabels:
-        name: private-subnet-${{ values.region }}a
+    subnetIdRef:
+        name: public-subnet-${{ values.region }}b
