@@ -6,5 +6,4 @@ resources:
   - subnet.yaml
   - EIP.yaml
   - nat.yaml
-  - route-table.yaml
-  - route.yaml
+  - routes.yaml

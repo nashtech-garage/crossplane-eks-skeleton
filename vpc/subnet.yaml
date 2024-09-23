@@ -2,12 +2,12 @@
 apiVersion: ec2.aws.upbound.io/v1beta1
 kind: Subnet
 metadata:
-  name: subnet-${{ values.region }}a
+  name: private-subnet-${{ values.region }}a
   annotations:
     argocd.argoproj.io/sync-wave: "2"
     argocd.argoproj.io/sync-options: "SkipDryRunOnMissingResource=true"
   labels:
-    name: subnet-${{ values.clusterName }}
+    name: private-subnet-${{ values.clusterName }}
 spec:
   providerConfigRef:
     name: aws-provider-config  # This line points to your specific ProviderConfig
@@ -22,12 +22,12 @@ spec:
 apiVersion: ec2.aws.upbound.io/v1beta1
 kind: Subnet
 metadata:
-  name: subnet-${{ values.region }}b
+  name: public-subnet-${{ values.region }}b
   annotations:
     argocd.argoproj.io/sync-wave: "2"
     argocd.argoproj.io/sync-options: "SkipDryRunOnMissingResource=true"
   labels:
-    name: subnet-${{ values.clusterName }}
+    name: public-subnet-${{ values.region }}b
 spec:
   providerConfigRef:
     name: aws-provider-config  # This line points to your specific ProviderConfig
