@@ -71,7 +71,6 @@ metadata:
   name: private-rta-${{ values.clusterName }}
   annotations:
     argocd.argoproj.io/sync-wave: "7"
-    argocd.argoproj.io/sync-options: "SkipDryRunOnMissingResource=true"
 spec:
   providerConfigRef:
     name: aws-provider-config  # This line points to your specific ProviderConfig
@@ -88,7 +87,6 @@ metadata:
   name: public-rta-${{ values.clusterName }}
   annotations:
     argocd.argoproj.io/sync-wave: "7"
-    argocd.argoproj.io/sync-options: "SkipDryRunOnMissingResource=true"
 spec:
   providerConfigRef:
     name: aws-provider-config  # This line points to your specific ProviderConfig
