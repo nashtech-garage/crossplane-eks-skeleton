@@ -16,13 +16,13 @@ spec:
     region: ${{ values.region }}
     capacityType: ON_DEMAND
     instanceTypes: ["t3.medium"]
-    diskSize: 5
+    diskSize: 20
     labels:
       role: nodegroup-${{ values.clusterName }}
     scalingConfig:
       - desiredSize: 1
         minSize: 1
-        maxSize: 2
+        maxSize: 1
     subnetIdRefs:
       - name: private-subnet-${{ values.region }}a
       - name: public-subnet-${{ values.region }}b
