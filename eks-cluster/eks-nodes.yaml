@@ -15,7 +15,8 @@ spec:
       name: ex-eks-nodes-role
     region: ${{ values.region }}
     capacityType: ON_DEMAND
-    instanceTypes: ["t3.small"]
+    instanceTypes: ["t3.medium"]
+    diskSize: 5
     labels:
       role: nodegroup-${{ values.clusterName }}
     scalingConfig:
